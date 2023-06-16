@@ -59,7 +59,7 @@ function RegisterForm() {
     // 阻擋預設行為 - 錯誤訊息泡泡
     e.preventDefault()
 
-    // console.log(e.target.name, e.target.validationMessage)
+    console.log(e.target.name, e.target.validationMessage)
 
     setFieldErrors({
       ...fieldErrors,

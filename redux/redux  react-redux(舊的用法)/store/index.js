@@ -1,11 +1,11 @@
 // 官方鼓勵使用者去使用toolkit
-// 這支JS就是store，reducer 回傳後的 state 放在這邊做管理
+// 這支JS就是store，state 放在這邊做管理
 
 // 從redux解構createStore後引入
 import { createStore } from 'redux'
 
 // counterReducer這個function就是reducer，第一次呼叫一定要有兩個傳參，分別是state(這裡是以給預設值的方式)、action
-const counterReducer = (state = { counter: 0 }, action) => {
+const counterReducer = (state = { counter: 0, showCounter: true }, action) => {
   console.log('state', state)
   console.log('action', action)
   // 這裡就是判斷state要做怎樣的變動的地方，透過action物件的type屬性

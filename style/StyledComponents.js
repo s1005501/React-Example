@@ -34,7 +34,7 @@ export const PropSkyblue = styled.p`
 // const 元件名稱 = styled.html標籤名.attrs((props)=>({自訂義的props(可寫html的屬性、自定義props的值)}))`CSS寫在這裡`
 // const 元件名稱 = styled.html標籤名.attrs({自訂義的props(可寫html的屬性、自定義props的值)})`CSS寫在這裡`
 export const Input = styled.input.attrs({
-  // 這裡可以定義合法或自訂的HTML屬性
+  // 這裡可以定義合法或自訂的HTML屬性，即直接在這裡決定html屬性
   type: 'password',
   foo: 'bar',
 
@@ -92,3 +92,4 @@ export const Rotate = styled.div`
 // 如果styled-components要直接在React使用的話(不用引入的方式)，定義在render外，不然每次渲染都會重新創建，影響效能。
 
 // styled-components還有一個特性是可以透過JS動態產生unique的class name，讓元件跟元件就不會發生因人為命名失誤而產生的class name重名而互相汙染的狀況。但缺點就是在console檢查html時會不好辨識
+

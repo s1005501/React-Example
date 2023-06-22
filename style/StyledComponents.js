@@ -86,10 +86,17 @@ export const Rotate = styled.div`
   padding: 2rem 1rem;
   font-size: 1.2rem;
 `
+// RWD
+// 在styled-components裡使用RWD要透過@media()，()內就是break point(斷點)，即決定RWD的寬度是多少
+export const RwdP = styled.p`
+  color: red;
+  @media (max-width: 1000px) {
+    color: blue;
+  }
+`
 
 // 如果怕自己取的styled-components名稱在React使用時會不知道他是哪個html標籤的話，建議很常共用的styled-components可以直接取跟html標籤一樣的名字，比如p的字體樣式就直接取名P，有特別不同的樣式建議可以再取不同的名稱，來方便管理、記憶
 
 // 如果styled-components要直接在React使用的話(不用引入的方式)，定義在render外，不然每次渲染都會重新創建，影響效能。
 
 // styled-components還有一個特性是可以透過JS動態產生unique的class name，讓元件跟元件就不會發生因人為命名失誤而產生的class name重名而互相汙染的狀況。但缺點就是在console檢查html時會不好辨識
-

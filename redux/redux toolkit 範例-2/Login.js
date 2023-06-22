@@ -1,16 +1,21 @@
 import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { setLogout } from './store/userSlice'
 
 function Login() {
+  const dispatch = useDispatch()
+  const state = useSelector((state) => state.user)
+  console.log(state)
   const handleLogout = () => {
-    console.log(1111111)
+    dispatch(setLogout())
   }
 
   return (
     <>
       <div>
-        <p>Name:</p>
-        <p>Age:</p>
-        <p>Email:</p>
+        <p>Name: {state.profile.name}</p>
+        <p>Age: {state.profile.age}</p>
+        <p>Email: {state.profile.email}</p>
         <button onClick={handleLogout}>Logout</button>
       </div>
     </>

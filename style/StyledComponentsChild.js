@@ -7,6 +7,7 @@ import {
   TomatoButton,
   Input,
   Rotate,
+  RwdP,
 } from './StyledComponents'
 
 function StyledComponentsChild({ skyblue }) {
@@ -49,10 +50,12 @@ function StyledComponentsChild({ skyblue }) {
         <br />
         {/* 有想要在改樣式也可以動態的改動 */}
         <Input placeholder="A bigger text input" size="2em" />
-
-        {/* animation */}
-        <Rotate>&lt; 💅 &gt;</Rotate>
       </div>
+      {/* animation */}
+      <Rotate>&lt; 💅 &gt;</Rotate>
+
+      {/* RWD */}
+      <RwdP>測試RWD</RwdP>
     </>
   )
 }

@@ -10,6 +10,8 @@ function RefsForm() {
     <>
       <h1>RefsForm</h1>
       {/* 不可控表單元件 */}
+
+      {/* 記得要把掛了useRef的自訂義變數透過ref屬性放到你要設定的表單內 */}
       <input type="text" ref={inputRef} />
       {/* 以下為操作用按鈕 */}
       <button

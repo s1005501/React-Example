@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
-import '../TodoApp.css'
-import { upload } from '@testing-library/user-event/dist/upload'
+import './TodoApp.css'
 import AddInput from './AddInput'
 import TodoItem from './TodoItem'
 import TypeButton from './TypeButton'

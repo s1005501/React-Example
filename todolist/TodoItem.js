@@ -17,7 +17,7 @@ function TodoItem({ todos, setTodos, myFilter }) {
     })
   }
 
-  const deletItem = (arr, id) => {
+  const deleteItem = (arr, id) => {
     return arr.filter((v, i) => {
       return v.id !== id
     })
@@ -32,7 +32,9 @@ function TodoItem({ todos, setTodos, myFilter }) {
   }
 
   const filterTodo = (arr, page) => {
+    // 過濾出!v.completed=true的，即未完成的
     if (page === '進行中') return arr.filter((v, i) => !v.completed)
+    // 過濾出v.completed=true的，即完成的
     if (page === '已完成') return arr.filter((v, i) => v.completed)
     return arr
   }
@@ -73,7 +75,7 @@ function TodoItem({ todos, setTodos, myFilter }) {
                 <button
                   type="button"
                   onClick={() => {
-                    setTodos(deletItem(todos, v.id))
+                    setTodos(deleteItem(todos, v.id))
                   }}
                 >
                   X

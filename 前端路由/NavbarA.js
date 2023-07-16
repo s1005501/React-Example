@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 
 // A用Link，B用useNavigate
 function NavbarA() {
@@ -13,6 +13,7 @@ function NavbarA() {
           <Link to="/NavbarB">切換到B路由</Link>
         </button>
       </div>
+      <Outlet />
     </>
   )
 }

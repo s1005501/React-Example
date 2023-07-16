@@ -1,5 +1,5 @@
 // memo useCallback useMemo
-// memo(淺比較)、useCallback(鎖定參照)主要負責處理傳值
+// memo(淺比較)、useCallback(鎖定參照)主要負責比對傳值(props)，避免重複渲染
 // useMemo主要處理複雜運算的code，暫存其結果
 
 import { useState, useCallback, useMemo, useEffect } from 'react'
@@ -11,6 +11,7 @@ const expensiveFunction = (number) => {
 }
 
 function FatherComponent() {
+  console.log('Father Render...')
   const [value, setValue] = useState('')
 
   // memo
@@ -23,8 +24,6 @@ function FatherComponent() {
   const sayHello = useCallback(() => {
     console.log('Hello')
   }, [])
-
-  console.log('Father Render...')
 
   // useMemo是用於處理複雜運算、高耗時的code，期可以將這類code執行結果暫存起來
   // 用法跟useCallback一樣，將要執行的code當成是useMemo的第一個參數放進callback裡
@@ -64,7 +63,7 @@ function FatherComponent() {
   //   ]
   // }, [])
 
-  // 檢查user這個物件有沒有被重新建立
+  // 檢查user物件有沒有被重新建立
   useEffect(() => {
     console.log('create user obj')
   }, [user])
@@ -81,7 +80,7 @@ function FatherComponent() {
         />
         <p>{value}</p>
 
-        <ChildComponent number={value} sayHello={sayHello} />
+        <ChildComponent number={1234} sayHello={sayHello} />
 
         <p>expensiveValue ： {expensiveValue}</p>
 

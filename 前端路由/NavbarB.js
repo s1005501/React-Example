@@ -1,5 +1,5 @@
 // 使用時要先從react-router-dom import進來
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Outlet } from 'react-router-dom'
 
 // A用Link，B用useNavigate
 function NavbarB() {
@@ -23,6 +23,7 @@ function NavbarB() {
           切換到A路由
         </button>
       </div>
+      <Outlet />
     </>
   )
 }

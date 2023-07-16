@@ -20,7 +20,8 @@ function Router() {
           </Route>
           {/* 巢狀路由概念，主要是為了讓不同路由能使用不同的共用元件，且可讀性較好，如此範例的NavbarA、B。
           使用上簡單來說就是在Route裡再包一個Route，外側的Route是主路由(共用元件)，裡面的Route是個別的分頁的感覺(子路由)
-          但這樣會有個問題就是會看不到子路由的內容，為了要能夠看到子路由要在主路由的最底下加上Outlet元件才能正常顯示，Outlet是react-router-dom裡的東西 */}
+          但這樣會有個問題就是會看不到子路由的內容，為了要能夠看到子路由要在主路由的最底下加上Outlet元件才能正常顯示，Outlet會去渲染匹配到的路由裡的元件
+          Outlet是react-router-dom裡的東西 */}
           <Route path="/NavbarB" element={<NavbarB />}>
             <Route index element={<ChildB />} />
             {/* 在react-router-dom裡，可以在Route裡給index屬性來表示是該路由的首頁，較方便 */}

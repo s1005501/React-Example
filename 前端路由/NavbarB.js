@@ -23,7 +23,8 @@ function NavbarB() {
           切換到A路由
         </button>
       </div>
-      <Outlet />
+      {/* Outlet也可以傳遞資料下去，有點類似props、useContext。是透過context屬性，匹配到的子路由底下的元件要使用時要透過useOutletContext */}
+      <Outlet context={{ name: 'Kevin' }} />
     </>
   )
 }

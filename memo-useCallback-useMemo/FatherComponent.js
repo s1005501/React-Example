@@ -17,7 +17,7 @@ function FatherComponent() {
   // memo
   // 如果我們把function傳下去給子元件，即使子元件不使用，當父元件因變更狀態而reRender時，子元件也會做reRender。這是因為memo的概念是淺比較，但function是沒辦法去做比較的(參照不同)，因此react認為其是不相等的而reRender。同樣無法比較的還有陣列跟物件
 
-  // 但透過useCallback就可以類似將參照鎖住得概念
+  // 但透過useCallback就可以類似將參照鎖住得概念，因此可以透過useCallback來傳遞無法比較的資料
   // 用法類似useEffect+memo，將要執行的code當成是useCallback的第一個參數放進callback裡
   // 第二個參數是dependency([])，[]內的dependency有做變更才做reRender的動作
   // 格式：const 變數 = useCallback(()=>{執行內容},[dependency])

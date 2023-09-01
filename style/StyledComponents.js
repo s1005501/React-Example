@@ -62,7 +62,7 @@ export const Button = styled.button`
   border: 2px solid #bf4f74;
   border-radius: 3px;
 `
-// 實際的使用方式是把styled當成是函式，styled()，其( )內塞入我們要做修改的元件
+// 實際的使用方式是把styled當成是函式，styled()，其( )內塞入我們要做修改的元件，後面再用backtick寫入要修改的樣式
 export const TomatoButton = styled(Button)`
   color: tomato;
   border-color: tomato;

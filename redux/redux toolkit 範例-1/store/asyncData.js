@@ -5,7 +5,7 @@ import axios from 'axios'
 const initialState = { asyncData: {} }
 
 export const getAsyncData = createAsyncThunk(
-  // 格式是"slice.name/action type"
+  // 格式是"slice.name/辨識是哪一個createAsyncThunk的名稱"
   'asyncData/getAsyncData',
   async (url) => {
     const response = await axios.get(url)

@@ -26,7 +26,6 @@ const asyncDataSlice = createSlice({
       console.log('action', action)
       state.asyncData = action.payload
     },
-
     // pending階段回傳
     [getAsyncData.pending]: (state, action) => {
       console.log('pending')

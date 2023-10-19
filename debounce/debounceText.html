@@ -1,52 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>以JS實作Debounce功能(input範例)</title>
-    </head>
-    <body>
-        <input type="text" />
-        <h2>Default: <span id="default"></span></h2>
-        <h2>Debounce: <span id="debounce"></span></h2>
-        <div class="result"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>以JS實作Debounce功能(input範例)</title>
+  </head>
+  <body>
+    <input type="text" />
+    <h2>Default: <span id="default"></span></h2>
+    <h2>Debounce: <span id="debounce"></span></h2>
+    <div class="result"></div>
 
-        <script>
-            const input = document.querySelector("input");
-            const result = document.querySelector(".result");
-            const defaultText = document.querySelector("#default");
-            const debounceText = document.querySelector("#debounce");
+    <script>
+      const input = document.querySelector('input')
+      const result = document.querySelector('.result')
+      const defaultText = document.querySelector('#default')
+      const debounceText = document.querySelector('#debounce')
 
-            const updateDefaultText = (text) =>
-                (defaultText.textContent = text);
+      const updateDefaultText = (text) => (defaultText.textContent = text)
 
-            // 透過設定setTimeout、clearTimeout的方式來完成
-            const debounce = (callback, time = 1000) => {
-                // 閉包
-                let timer;
-                // console.log("callback", callback);
-                return (...args) => {
-                    // console.log(...args);
-                    // 每次再輸入時都要清掉setTimeout
-                    clearTimeout(timer);
+      // 透過設定setTimeout、clearTimeout的方式來完成
+      const debounce = (callback, time = 1000) => {
+        // 閉包
+        let timer
+        // console.log("callback", callback);
+        return (...args) => {
+          console.log('...args', ...args)
+          // 每次再輸入時都要清掉setTimeout
+          clearTimeout(timer)
 
-                    // 簡單來說就是在使用者輸入完資料後再經過我們設定的時間後才去執行callback把資料印出來
-                    timer = setTimeout(() => {
-                        callback(...args);
-                    }, time);
-                };
-            };
-            const updateDebounceText = debounce((text) => {
-                debounceText.textContent = text;
-            }, 1500);
+          // 簡單來說就是在使用者輸入完資料後再經過我們設定的時間後才去執行callback把資料印出來
+          timer = setTimeout(() => {
+            callback(...args)
+          }, time)
+        }
+      }
+      const updateDebounceText = debounce((text) => {
+        debounceText.textContent = text
+      }, 1500)
 
-            input.addEventListener("input", (e) => {
-                // console.log(e.target.value);
-                updateDefaultText(e.target.value);
-                updateDebounceText(e.target.value, "Hello World!");
-            });
+      input.addEventListener('input', (e) => {
+        // console.log(e.target.value);
+        updateDefaultText(e.target.value)
+        updateDebounceText(e.target.value, 'Hello World!')
+      })
 
-            // 參考網站：https://www.youtube.com/watch?v=vCLobXMROZg&ab_channel=WeiWei
-        </script>
-    </body>
+      // 參考網站：https://www.youtube.com/watch?v=vCLobXMROZg&ab_channel=WeiWei
+    </script>
+  </body>
 </html>

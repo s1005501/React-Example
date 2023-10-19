@@ -63,6 +63,24 @@ function FatherComponent() {
   //   ]
   // }, [])
 
+  // 用useCallback也可以達到跟useMemo同樣的效果
+  // 這樣也不會重複渲染
+  // 物件
+  // const user = useCallback(() => {
+  //   return {
+  //     id: 1,
+  //     name: 'Kevin',
+  //   }
+  // }, [])
+
+  // 陣列
+  // const user = useCallback(() => {
+  //   return [
+  //     { id: 1, name: 'Kevin' },
+  //     { id: 2, name: 'Hank' },
+  //   ]
+  // }, [])
+
   // 檢查user物件有沒有被重新建立
   useEffect(() => {
     console.log('create user obj')
@@ -81,6 +99,7 @@ function FatherComponent() {
         <p>{value}</p>
 
         <ChildComponent number={1234} sayHello={sayHello} />
+        {/* <ChildComponent number={1234} /> */}
 
         <p>expensiveValue ： {expensiveValue}</p>
 
